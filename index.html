@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <title>Angularjs_Crud</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="js/angular.min.js" ></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="js/app.js" ></script>
+  <script type="text/javascript" src="js/router.js" ></script>
+  
+
+</head>
+<body>
+
+<div class="container" ng-controller="myController">
+
+	<hr>
+	<button type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#addModal"><a ui-sref="add" style="color: white;">Add New User</a></button>
+	<h2><a ui-sref="list">List of all users</a></h2>
+	<span class="clearfix"></span>
+	<hr>
+
+	<div class="alert" ng-if="message" ng-style="myObj">
+  		<a href="#" class="close glyphicon glyphicon-remove" data-dismiss="alert" aria-label="close" ng-click="clearmessage()"></a>
+  		<strong>{{message}}</strong>
+	</div>
+	
+	 <div ui-view></div>
+
+
+</div>
+
+</body>
+</html>

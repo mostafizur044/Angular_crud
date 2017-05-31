@@ -1,0 +1,45 @@
+	<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <td>{{$index + 1}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td><button type="button" class="btn btn-info" data-target="#editModal" ng-click="editInfo(user)"><a style="color: white;" ui-sref="edit">Edit</a></button></td>
+        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" ng-click="deleteUser(user)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal  for delete-->
+  <div class="modal fade" id="deleteModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="background: black; text-align: center; color: red;">
+        <div class="modal-header">
+          <h2 class="modal-title">Attention !!!!!!</h2>
+        </div>
+        <div class="modal-body">
+          <strong>You are going to delete {{name}}'s all info. Are you sure ? </strong>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="removeItem()">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal for delete end-->
+	
+
+  
